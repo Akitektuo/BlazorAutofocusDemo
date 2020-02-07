@@ -1,0 +1,16 @@
+﻿@using Autofocus_Demo.Utils
+@inject IJSRuntime JSRuntime
+@page "/"
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<input class="focus" />
+
+@code {
+    protected override void OnAfterRender(bool firstRender)
+    {
+        JSUtils.RequestFocus(JSRuntime, ".focus");
+    }
+}
