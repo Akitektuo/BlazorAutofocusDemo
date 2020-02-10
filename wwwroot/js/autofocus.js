@@ -7,5 +7,9 @@
     observer.observe(document, { childList: true, subtree: true });
 });
 
-window.requestFocus = selector => 
-    document.querySelector(selector).focus();
+window.requestFocus = selector => {
+    const element = typeof selector === "string" ? document.querySelector(selector) : selector;
+
+    element.focus();
+}
+    

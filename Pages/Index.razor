@@ -6,11 +6,18 @@
 
 Welcome to your new app.
 
-<input class="focus" />
+<input @ref=reference class="focus" />
 
 @code {
+    ElementReference reference;
+
     protected override void OnAfterRender(bool firstRender)
     {
-        JSUtils.RequestFocus(JSRuntime, ".focus");
+        JSUtils.RequestFocus(JSRuntime, reference);
     }
+
+    //protected override void OnAfterRender(bool firstRender)
+    //{
+    //    JSUtils.RequestFocus(JSRuntime, ".focus");
+    //}
 }
